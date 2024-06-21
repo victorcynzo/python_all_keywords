@@ -14,7 +14,7 @@ for i in range(10):
         print(i)
 print('Done')
 
-#await, keyword with async, waits for task and then continues I suppose?
+#await, keyword with async, waits for task and then continues
 import asyncio
 from asyncio import Future
 async def my_task(no: int) -> dict:
@@ -30,7 +30,7 @@ async def main() -> None:
 if __name__ == '__main__':
     asyncio.run(main=main())
 
-# async, asynchronised programming, no clue
+# async, asynchronised programming, execute multiple tasks concurrently without waiting for one to finish
 import asyncio #asynchronised tasks
 async def main() -> None:
     print("I am an asynchronous function!")
