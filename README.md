@@ -1,6 +1,6 @@
 Tutorial from https://www.youtube.com/watch?v=rKk8XPLysj8&t=584s
 
-Beautiful is better than ugly.
+Beautiful is better than ugly. <br />
 Explicit is better than implicit.
 Simple is better than complex.
 Complex is better than complicated.
