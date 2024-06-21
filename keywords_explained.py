@@ -4,6 +4,10 @@
 db: str | None = 'users.db'
 # db: str | None = None -- doesn't run because database doesn't exist
 assert db, 'Cannot run program without the database'
+# next program runs as long as condition is met, n < limit
+limit: int = 10
+n: int = 2
+assert n < limit, f'{n} is not less than the limit ({limit}).'
 
 #as give an alias to a module, to keep it short
 import math as m 
