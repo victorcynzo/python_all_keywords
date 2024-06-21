@@ -1,4 +1,5 @@
 #all 39 keywords in Python
+#need to use updated version of Python (at least 3.9 or higher)
 from keyword import kwlist, softkwlist
 
 def display_keywords():
