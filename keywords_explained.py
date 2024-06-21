@@ -1,3 +1,11 @@
+#class, creating a class, provide blueprint of what class should contain, here name and work
+class Person:
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+    def work(self) -> None:
+        print(f'{ self.name} is working.')
+
 #break, after condition, break out of loop
 for i in range(10):
     if i == 5:
