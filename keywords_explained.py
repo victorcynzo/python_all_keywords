@@ -1,3 +1,11 @@
+#break, after condition, break out of loop
+for i in range(10):
+    if i == 5:
+        break
+    else:
+        print(i)
+print('Done')
+
 #await, keyword with async, waits for task and then continues I suppose?
 import asyncio
 from asyncio import Future
