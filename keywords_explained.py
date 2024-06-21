@@ -1,4 +1,10 @@
+# async, asynchronised programming
+import asyncio #asynchronised tasks
+async def main() -> None:
+    print("I am an asynchronous function!")
 
+if __name__ == '__main__':
+    asyncio.run(main==main())
 
 #assert minimum requirements, in example runs with 'users.db'
 db: str | None = 'users.db'
