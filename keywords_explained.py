@@ -1,3 +1,103 @@
+#softkeyword can be used as python variable and softkeyword
+#keyword cannot be used as variable
+
+#type since Python 3.12, so need to update Python for this one..., declare own type
+type IntOrStr = int | str
+var: IntOrStr = 10
+var2: IntOrStr = 'text'
+var3: IntOrStr = None #otherwise return warning message
+
+#match, power of pattern matching
+weather: tuple[str, int] = 'rain', 6
+match weather:
+    case 'rain', severity if severity <= 5:
+        print(f'Rain ({severity})')
+    case 'rain', severity if severity > 5:
+        print(f'Very hard rain! ({severity})')
+    case 'cloudy', severity:
+        print(f'CloudCream, anyone? ({severity})')
+    case _:
+        print('Unknown weather')
+
+#case, to match case statements, can be more readable and concise than if/elif/else statements
+weather: str = 'rain'
+match weather:
+    case 'rain':
+        print('Not again!')
+    case 'cloudy':
+        print('CloudCream, anyone?')
+    case _: #all the other cases, underscore as soft keyword
+        print('Unknown weather, damn you climate change!')
+
+# _ underscore, can use as variable name, throwaway variable, not something you refer to
+# or to define dunder method in a class
+from typing import Callable
+_ = 10
+for _ in range(3):
+    print('Hello')
+class Fruit:
+    def __init__(self) -> None:
+        print('Dunder methods use underscores to define them.')
+
+#soft keywords
+
+#yield, create generators, once value has been yielded, it disappears
+from typing import Generator
+def generate_numbers(limit :int) -> Generator:
+    for i in range(0, limit):
+        yield i
+
+numbers: Generator = generate_numbers(limit=10)
+print(next(numbers)) #once retrieved, deletes from generator
+print(next(numbers))
+print(next(numbers))
+print(list(numbers)) #check output
+
+#with, automatcially open, close, and finally (if wrong) file, always closes file after, handles all
+with open('text.txt', 'r') as file:
+    text: str = file.read()
+    print(text)
+
+#while is used for while loops, or for infinite loops by typing while True
+import time
+is_connected: bool=True
+i: int = 1
+while is_connected:
+    if i==3:
+        is_connected = False
+    print(f'Connected for: {i}s')
+    time.sleep(1)
+    i += 1
+print('Connection lost... ')
+
+#try, run dangerous code, code that might run an exception
+try:
+    result: float = 1_000_000 / 0 #gives zerodivisionerror,
+    #for example wrong user input, float and user gives 10 (int)
+except ZeroDivisionError:
+    print('Go home bob, you are drunk...')
+
+#return, returns(outputs) value from a function 
+from datetime import datetime
+def get_time() -> str: #specify that it returns a string
+    now: datetime = datetime.now()
+    return f'{now:%r}' #by default return None, even without specified
+print(get_time())
+
+#raise, manually make an exception
+raise Exception('Manually raised an exception for no reason.')
+
+#pass, placeholder for function, class, or for loop
+def func():
+    pass
+class Fruit:
+    pass
+
+#or, check for multiple conditions (non-inclusive), only one needs to be satisfied
+a, b, c = 5, 10, 20
+if c > a or a == b:
+    print('One of the conditions was satisfied.')
+
 #not, check if statement not true
 names: list[str] = ['Bob', 'Tom', 'James', 'Jef']
 if 'Bob' not in names:
@@ -12,7 +112,7 @@ else:
 #nonlocal
 def func() -> None:
     item: str = 'candle'
-    def inner_func() -> None:
+    def inner_func() -> None: #state that function returns None
         nonlocal item #chooses item not in this local function (apple), but the candle one
         item = 'apple'
         print(item)
