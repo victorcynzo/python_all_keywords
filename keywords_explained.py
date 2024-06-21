@@ -1,0 +1,36 @@
+
+
+#assert minimum requirements, in example runs with 'users.db'
+db: str | None = 'users.db'
+# db: str | None = None -- doesn't run because database doesn't exist
+assert db, 'Cannot run program without the database'
+
+#as give an alias to a module, to keep it short
+import math as m 
+from random import randint as ri
+
+x = m.cos(10)
+print(x)
+y = ri(10, 20)
+print(y)
+
+#and check if BOTH conditions are true
+a, b, c = 1, 2, 3
+
+if c > b and c > a:
+    print('both conditions are true')
+
+#True is constant, integer value of 1
+has_no_money: bool = True
+
+print(has_no_money)
+print(int(True))
+
+#None represents absence of a value, for example data or element doesn't exist
+None 
+
+#False is constant, equal to integer number 0
+has_money: bool = False
+
+print(has_money)
+print(int(False))
